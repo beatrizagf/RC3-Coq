@@ -1,0 +1,31 @@
+DIGEST aa9e3fe466f4d375726073e1f350e79d
+FTop.DynamicProp
+R15:24 Top.SyntaxProp <> <> lib
+R42:48 Top.Dynamic <> <> lib
+R66:71 Top.Shared <> <> lib
+prf 105:120 <> step_n_monotonic
+R197:204 Coq.Init.Logic <> :type_scope:x_'->'_x not
+R206:209 Coq.Init.Peano <> :nat_scope:x_'<='_x not
+R205:205 Top.DynamicProp <> n var
+R210:211 Top.DynamicProp <> n' var
+R161:163 Top.Dynamic <> ::x_'/'_x_'==>'_x not
+R176:180 Top.Dynamic <> ::x_'/'_x_'==>'_x not
+R160:160 Top.DynamicProp <> P var
+R164:164 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R166:167 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R169:170 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R172:173 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R175:175 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R165:165 Top.DynamicProp <> H var
+R168:168 Top.DynamicProp <> V var
+R171:171 Top.DynamicProp <> n var
+R174:174 Top.DynamicProp <> T var
+R181:181 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R184:185 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R188:189 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R192:193 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R196:196 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R182:183 Top.DynamicProp <> H' var
+R186:187 Top.DynamicProp <> V' var
+R190:191 Top.DynamicProp <> n' var
+R194:195 Top.DynamicProp <> T' var
