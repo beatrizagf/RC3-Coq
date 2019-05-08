@@ -1,0 +1,242 @@
+DIGEST 330c99d3d6ff005922190afc6943d5de
+FTop.Meta
+R8:23 Coq.Bool.Sumbool <> <> lib
+R41:59 Coq.Arith.Peano_dec <> <> lib
+R77:91 Coq.Arith.EqNat <> <> lib
+R109:121 Coq.Bool.Bool <> <> lib
+R140:145 Top.Shared <> <> lib
+rec 176:177 <> ID
+proj 197:205 <> id_eq_dec
+R223:223 Top.Meta <> A var
+R227:227 Coq.Init.Specif <> :type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R233:237 Coq.Init.Specif <> :type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R244:244 Coq.Init.Specif <> :type_scope:'{'_x_'}'_'+'_'{'_x_'}' not
+R229:231 Coq.Init.Logic <> :type_scope:x_'='_x not
+R228:228 Top.Meta <> x var
+R232:232 Top.Meta <> y var
+R239:242 Coq.Init.Logic <> :type_scope:x_'<>'_x not
+R238:238 Top.Meta <> x var
+R243:243 Top.Meta <> y var
+inst 259:264 <> ID_nat
+R268:269 Top.Meta <> ID class
+R271:273 Coq.Init.Datatypes <> nat ind
+ind 324:327 <> svar
+constr 343:346 <> SVar
+R353:356 Coq.Init.Logic <> :type_scope:x_'->'_x not
+R357:360 Top.Meta <> svar ind
+R350:352 Coq.Init.Datatypes <> nat ind
+inst 373:379 <> ID_svar
+R383:384 Top.Meta <> ID class
+R386:389 Top.Meta <> svar ind
+def 441:444 <> this
+R449:452 Top.Meta <> SVar constr
+ind 468:471 <> dvar
+constr 487:490 <> DVar
+R497:500 Coq.Init.Logic <> :type_scope:x_'->'_x not
+R501:504 Top.Meta <> dvar ind
+R494:496 Coq.Init.Datatypes <> nat ind
+inst 517:523 <> ID_dvar
+R527:528 Top.Meta <> ID class
+R530:533 Top.Meta <> dvar ind
+ind 599:607 <> atomicity
+constr 622:627 <> Atomic
+constr 645:653 <> NonAtomic
+R631:639 Top.Meta <> atomicity ind
+R657:665 Top.Meta <> atomicity ind
+def 680:687 <> field_id
+R692:694 Coq.Init.Datatypes <> nat ind
+def 708:716 <> method_id
+R721:723 Coq.Init.Datatypes <> nat ind
+def 737:744 <> class_id
+R749:752 Coq.Init.Datatypes <> prod ind
+R758:766 Top.Meta <> atomicity ind
+R754:756 Coq.Init.Datatypes <> nat ind
+def 802:813 <> interface_id
+R818:821 Coq.Init.Datatypes <> prod ind
+R827:835 Top.Meta <> atomicity ind
+R823:825 Coq.Init.Datatypes <> nat ind
+def 871:873 <> loc
+R878:880 Coq.Init.Datatypes <> nat ind
+def 894:897 <> lock
+R902:904 Top.Meta <> loc def
+def 924:933 <> stripClass
+R939:946 Top.Meta <> class_id def
+R952:952 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R958:959 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R969:969 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R953:955 Coq.Init.Datatypes <> fst def
+R957:957 Top.Meta <> x var
+R960:968 Top.Meta <> NonAtomic constr
+def 1035:1048 <> stripInterface
+R1054:1065 Top.Meta <> interface_id def
+R1071:1071 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1077:1078 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1088:1088 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1072:1074 Coq.Init.Datatypes <> fst def
+R1076:1076 Top.Meta <> x var
+R1079:1087 Top.Meta <> NonAtomic constr
+def 1182:1194 <> eqb_atomicity
+R1203:1211 Top.Meta <> atomicity ind
+R1225:1225 Top.Meta <> a var
+R1238:1243 Top.Meta <> Atomic constr
+R1254:1255 Top.Meta <> a' var
+R1282:1287 Top.Meta <> Atomic constr
+R1292:1295 Coq.Init.Datatypes <> true constr
+R1317:1325 Top.Meta <> NonAtomic constr
+R1330:1334 Coq.Init.Datatypes <> false constr
+R1362:1370 Top.Meta <> NonAtomic constr
+R1381:1382 Top.Meta <> a' var
+R1409:1414 Top.Meta <> Atomic constr
+R1419:1423 Coq.Init.Datatypes <> false constr
+R1445:1453 Top.Meta <> NonAtomic constr
+R1458:1461 Coq.Init.Datatypes <> true constr
+def 1535:1546 <> eqb_class_id
+R1556:1563 Top.Meta <> class_id def
+R1571:1574 Coq.Init.Datatypes <> andb def
+R1604:1616 Top.Meta <> eqb_atomicity def
+R1627:1629 Coq.Init.Datatypes <> snd def
+R1631:1632 Top.Meta <> c' var
+R1619:1621 Coq.Init.Datatypes <> snd def
+R1623:1623 Top.Meta <> c var
+R1577:1583 Coq.Arith.EqNat <> beq_nat syndef
+R1594:1596 Coq.Init.Datatypes <> fst def
+R1598:1599 Top.Meta <> c' var
+R1586:1588 Coq.Init.Datatypes <> fst def
+R1590:1590 Top.Meta <> c var
+def 1649:1664 <> eqb_interface_id
+R1674:1685 Top.Meta <> interface_id def
+R1693:1696 Coq.Init.Datatypes <> andb def
+R1726:1738 Top.Meta <> eqb_atomicity def
+R1749:1751 Coq.Init.Datatypes <> snd def
+R1753:1754 Top.Meta <> c' var
+R1741:1743 Coq.Init.Datatypes <> snd def
+R1745:1745 Top.Meta <> c var
+R1699:1705 Coq.Arith.EqNat <> beq_nat syndef
+R1716:1718 Coq.Init.Datatypes <> fst def
+R1720:1721 Top.Meta <> c' var
+R1708:1710 Coq.Init.Datatypes <> fst def
+R1712:1712 Top.Meta <> c var
+prf 1777:1785 <> pair_cong
+R1808:1809 Top.Meta <> A1 var
+R1818:1819 Top.Meta <> A1 var
+R1828:1829 Top.Meta <> B1 var
+R1838:1839 Top.Meta <> B1 var
+R1852:1857 Coq.Init.Logic <> :type_scope:x_'->'_x not
+R1865:1870 Coq.Init.Logic <> :type_scope:x_'->'_x not
+R1879:1881 Coq.Init.Logic <> :type_scope:x_'='_x not
+R1871:1871 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1874:1875 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1878:1878 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1872:1873 Top.Meta <> x1 var
+R1876:1877 Top.Meta <> y1 var
+R1882:1882 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1885:1886 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1889:1889 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R1883:1884 Top.Meta <> x2 var
+R1887:1888 Top.Meta <> y2 var
+R1860:1862 Coq.Init.Logic <> :type_scope:x_'='_x not
+R1858:1859 Top.Meta <> y1 var
+R1863:1864 Top.Meta <> y2 var
+R1847:1849 Coq.Init.Logic <> :type_scope:x_'='_x not
+R1845:1846 Top.Meta <> x1 var
+R1850:1851 Top.Meta <> x2 var
+def 2045:2060 <> eqb_atomicity_eq
+R2100:2103 Coq.Init.Logic <> :type_scope:x_'->'_x not
+R2105:2107 Coq.Init.Logic <> :type_scope:x_'='_x not
+R2104:2104 Top.Meta <> x var
+R2108:2108 Top.Meta <> y var
+R2080:2082 Coq.Init.Logic <> :type_scope:x_'='_x not
+R2076:2079 Coq.Init.Datatypes <> true constr
+R2083:2095 Top.Meta <> eqb_atomicity def
+R2099:2099 Top.Meta <> y var
+R2097:2097 Top.Meta <> x var
+def 2290:2304 <> eqb_class_id_eq
+R2345:2348 Coq.Init.Logic <> :type_scope:x_'->'_x not
+R2350:2352 Coq.Init.Logic <> :type_scope:x_'='_x not
+R2349:2349 Top.Meta <> c var
+R2353:2354 Top.Meta <> c' var
+R2325:2327 Coq.Init.Logic <> :type_scope:x_'='_x not
+R2321:2324 Coq.Init.Datatypes <> true constr
+R2328:2339 Top.Meta <> eqb_class_id def
+R2343:2344 Top.Meta <> c' var
+R2341:2341 Top.Meta <> c var
+R2418:2429 Top.Meta <> eqb_class_id def
+R2456:2467 Coq.Bool.Bool <> andb_true_eq thm
+R2456:2467 Coq.Bool.Bool <> andb_true_eq thm
+R2548:2557 Coq.Arith.EqNat <> beq_nat_eq def
+R2548:2557 Coq.Arith.EqNat <> beq_nat_eq def
+R2574:2589 Top.Meta <> eqb_atomicity_eq def
+R2574:2589 Top.Meta <> eqb_atomicity_eq def
+def 2655:2673 <> eqb_interface_id_eq
+R2718:2721 Coq.Init.Logic <> :type_scope:x_'->'_x not
+R2723:2725 Coq.Init.Logic <> :type_scope:x_'='_x not
+R2722:2722 Top.Meta <> i var
+R2726:2727 Top.Meta <> i' var
+R2694:2696 Coq.Init.Logic <> :type_scope:x_'='_x not
+R2690:2693 Coq.Init.Datatypes <> true constr
+R2697:2712 Top.Meta <> eqb_interface_id def
+R2716:2717 Top.Meta <> i' var
+R2714:2714 Top.Meta <> i var
+R2791:2806 Top.Meta <> eqb_interface_id def
+R2833:2844 Coq.Bool.Bool <> andb_true_eq thm
+R2833:2844 Coq.Bool.Bool <> andb_true_eq thm
+R2925:2934 Coq.Arith.EqNat <> beq_nat_eq def
+R2925:2934 Coq.Arith.EqNat <> beq_nat_eq def
+R2951:2966 Top.Meta <> eqb_atomicity_eq def
+R2951:2966 Top.Meta <> eqb_atomicity_eq def
+def 3053:3063 <> partial_map
+R3084:3085 Top.Meta <> ID class
+R3087:3090 Top.Meta <> from var
+R3110:3113 Coq.Init.Logic <> :type_scope:x_'->'_x not
+R3114:3119 Coq.Init.Datatypes <> option ind
+R3121:3122 Top.Meta <> to var
+R3106:3109 Top.Meta <> from var
+def 3137:3141 <> empty
+R3161:3162 Top.Meta <> ID class
+R3164:3164 Top.Meta <> A var
+R3169:3179 Top.Meta <> partial_map def
+R3183:3183 Top.Meta <> B var
+R3181:3181 Top.Meta <> A var
+R3198:3201 Coq.Init.Datatypes <> None constr
+def 3217:3222 <> extend
+R3242:3243 Top.Meta <> ID class
+R3245:3245 Top.Meta <> A var
+R3257:3267 Top.Meta <> partial_map def
+R3271:3271 Top.Meta <> B var
+R3269:3269 Top.Meta <> A var
+R3277:3277 Top.Meta <> A var
+R3283:3283 Top.Meta <> B var
+R3304:3312 Top.Meta <> id_eq_dec meth
+R3316:3317 Top.Meta <> a' var
+R3314:3314 Top.Meta <> a var
+R3376:3380 Top.Meta <> Gamma var
+R3382:3383 Top.Meta <> a' var
+R3338:3341 Coq.Init.Datatypes <> Some constr
+R3343:3343 Top.Meta <> b var
+R3399:3404 Top.Meta <> extend def
+def 3419:3422 <> drop
+R3442:3443 Top.Meta <> ID class
+R3445:3445 Top.Meta <> A var
+R3457:3467 Top.Meta <> partial_map def
+R3471:3471 Top.Meta <> B var
+R3469:3469 Top.Meta <> A var
+R3477:3477 Top.Meta <> A var
+R3498:3506 Top.Meta <> id_eq_dec meth
+R3510:3511 Top.Meta <> a' var
+R3508:3508 Top.Meta <> a var
+R3568:3572 Top.Meta <> Gamma var
+R3574:3575 Top.Meta <> a' var
+R3532:3535 Coq.Init.Datatypes <> None constr
+R3591:3594 Top.Meta <> drop def
+def 3609:3613 <> fresh
+R3633:3634 Top.Meta <> ID class
+R3636:3636 Top.Meta <> A var
+R3648:3658 Top.Meta <> partial_map def
+R3662:3662 Top.Meta <> B var
+R3660:3660 Top.Meta <> A var
+R3668:3668 Top.Meta <> A var
+R3681:3683 Coq.Init.Logic <> :type_scope:x_'='_x not
+R3674:3678 Top.Meta <> Gamma var
+R3680:3680 Top.Meta <> a var
+R3684:3687 Coq.Init.Datatypes <> None constr
+R3703:3707 Top.Meta <> fresh def
