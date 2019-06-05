@@ -109,10 +109,10 @@ Inductive hasType (P : program) (Gamma : env) : expr -> ty -> nature -> (NatureC
         let n3 := NatureOf(addAtomic (discardAtomic t)) in (*!!*)
         let n' := ConditionalNature (NVar x) NAtomic n1 (NatureOf(discardAtomic t1)) in (*!!*)
         let n'' := ConditionalNature (NVar x) NAtomic n3 (NatureOf(discardAtomic t)) in  (*!!*)
-        P ; Gamma |- ECall x m e \in t # n'' |> Union NatureConstraint ncs (Singleton NatureConstraint (NN n' n)) (*!!*)
+        P ; Gamma |- ECall x m e \in t # n'' |> Union NatureConstraint ncs (Singleton NatureConstraint (NN n' n'')) (*!!*)
   | T_Select :
-      forall x f c t fs nclass ncsclass,
-        P ; Gamma |- (EVar x) \in TClass c # nclass |> ncsclass ->(*!!*)
+      forall x f c t fs nclass,
+        P ; Gamma |- (EVar x) \in TClass c # nclass |> (Empty_set NatureConstraint) ->(*!!*)
         fields P (TClass c) = Some fs -> 
         fieldLookup fs f = Some (Field f t) ->
         let n1 := NatureOf(addAtomic (discardAtomic (FieldsType (Field f t)))) in 
@@ -120,8 +120,8 @@ Inductive hasType (P : program) (Gamma : env) : expr -> ty -> nature -> (NatureC
             let n := ConditionalNature (NVar x) NAtomic n1 n2 in 
               P ; Gamma |- ESelect x f \in t# n |> (Empty_set NatureConstraint) (*!!*)
   | T_Update :
-      forall c x f e t fs n ncs nclass ncsclass,
-        P ; Gamma |- (EVar x) \in TClass c # nclass |> ncsclass -> 
+      forall c x f e t fs n ncs nclass,
+        P ; Gamma |- (EVar x) \in TClass c # nclass |> (Empty_set NatureConstraint) -> 
         fields P (TClass c) = Some fs -> 
         fieldLookup fs f = Some (Field f t) ->
         P ; Gamma |- e \in t # n |> ncs ->
