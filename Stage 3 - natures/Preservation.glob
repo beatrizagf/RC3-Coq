@@ -187,11 +187,11 @@ R3280:3286 Top.Types <> env_loc constr
 R3289:3294 Coq.Init.Datatypes <> length def
 R3385:3388 Top.Syntax <> ENew constr
 R3400:3408 Coq.Sets.Ensembles <> Empty_set ind
-R3410:3425 Top.Syntax <> NatureConstraint ind
+R3410:3425 Top.Syntax <> NatureConstraint def
 R3346:3373 Top.WellFormednessProp <> wfConfiguration_substitution thm
 R3385:3388 Top.Syntax <> ENew constr
 R3400:3408 Coq.Sets.Ensembles <> Empty_set ind
-R3410:3425 Top.Syntax <> NatureConstraint ind
+R3410:3425 Top.Syntax <> NatureConstraint def
 R3346:3373 Top.WellFormednessProp <> wfConfiguration_substitution thm
 R3450:3475 Top.WellFormednessProp <> wfConfiguration_heapExtend thm
 R3496:3517 Top.WellFormednessProp <> wfFields_declsToFields thm

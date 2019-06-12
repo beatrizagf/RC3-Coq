@@ -1,4 +1,4 @@
-DIGEST 913aaf2f46f77bbbd7d1382d08aa712a
+DIGEST 71b1fb2adc245004bb5491dffa0e7477
 FTop.Syntax
 R15:18 Coq.Lists.List <> <> lib
 R59:62 Top.Meta <> <> lib
@@ -867,6 +867,7 @@ constr 10701:10710 <> NNonAtomic
 constr 10725:10733 <> Undefined
 constr 10748:10751 <> NVar
 constr 10773:10789 <> ConditionalNature
+constr 10877:10880 <> Call
 R10639:10644 Top.Syntax <> nature ind
 R10714:10719 Top.Syntax <> nature ind
 R10737:10742 Top.Syntax <> nature ind
@@ -882,150 +883,85 @@ R10823:10828 Top.Syntax <> nature ind
 R10813:10818 Top.Syntax <> nature ind
 R10803:10808 Top.Syntax <> nature ind
 R10793:10798 Top.Syntax <> nature ind
-def 10887:10890 <> Call
-R10910:10912 Coq.Init.Datatypes <> :type_scope:x_'*'_x not
-R10898:10900 Coq.Init.Datatypes <> :type_scope:x_'*'_x not
-R10896:10897 Top.Syntax <> ty ind
-R10901:10909 Top.Meta <> method_id def
+R10886:10889 Coq.Init.Logic <> :type_scope:x_'->'_x not
+R10899:10902 Coq.Init.Logic <> :type_scope:x_'->'_x not
+R10909:10912 Coq.Init.Logic <> :type_scope:x_'->'_x not
 R10913:10918 Top.Syntax <> nature ind
-ind 10971:10986 <> NatureConstraint
-constr 11037:11038 <> NN
-constr 11083:11084 <> NC
-R11048:11051 Coq.Init.Logic <> :type_scope:x_'->'_x not
-R11058:11061 Coq.Init.Logic <> :type_scope:x_'->'_x not
-R11062:11077 Top.Syntax <> NatureConstraint ind
-R11052:11057 Top.Syntax <> nature ind
-R11042:11047 Top.Syntax <> nature ind
-R11094:11097 Coq.Init.Logic <> :type_scope:x_'->'_x not
-R11102:11105 Coq.Init.Logic <> :type_scope:x_'->'_x not
-R11106:11121 Top.Syntax <> NatureConstraint ind
-R11098:11101 Top.Syntax <> Call def
-R11088:11093 Top.Syntax <> nature ind
-def 11136:11157 <> NatureConstraintSystem
-R11163:11171 Coq.Sets.Powerset <> Power_set ind
-R11191:11198 Coq.Sets.Ensembles <> Full_set ind
-R11200:11215 Top.Syntax <> NatureConstraint ind
-R11173:11188 Top.Syntax <> NatureConstraint ind
-def 11241:11257 <> MethodConstraints
-R11272:11275 Coq.Init.Datatypes <> :type_scope:x_'*'_x not
-R11300:11300 Coq.Init.Datatypes <> :type_scope:x_'*'_x not
-R11263:11271 Top.Meta <> method_id def
-R11292:11295 Coq.Init.Logic <> :type_scope:x_'->'_x not
-R11276:11291 Top.Syntax <> NatureConstraint ind
-def 11321:11342 <> MethodConstraintSystem
-R11348:11356 Coq.Sets.Powerset <> Power_set ind
-R11377:11384 Coq.Sets.Ensembles <> Full_set ind
-R11386:11402 Top.Syntax <> MethodConstraints def
-R11358:11374 Top.Syntax <> MethodConstraints def
-def 11489:11496 <> NatureOf
-R11503:11504 Top.Syntax <> ty ind
-R11509:11514 Top.Syntax <> nature ind
-R11527:11527 Top.Syntax <> t var
-R11540:11545 Top.Syntax <> TClass constr
-R11547:11547 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
-R11549:11550 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
-R11557:11557 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
-R11551:11556 Top.Meta <> Atomic constr
-R11562:11568 Top.Syntax <> NAtomic constr
-R11576:11585 Top.Syntax <> TInterface constr
-R11587:11587 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
-R11589:11590 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
-R11597:11597 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
-R11591:11596 Top.Meta <> Atomic constr
-R11602:11608 Top.Syntax <> NAtomic constr
-R11621:11630 Top.Syntax <> NNonAtomic constr
-def 11704:11716 <> discardAtomic
-R11723:11724 Top.Syntax <> ty ind
-R11729:11730 Top.Syntax <> ty ind
-R11742:11742 Top.Syntax <> t var
-R11755:11760 Top.Syntax <> TClass constr
-R11762:11762 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
-R11764:11765 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
-R11767:11767 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
-R11772:11777 Top.Syntax <> TClass constr
-R11779:11779 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
-R11781:11782 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
-R11792:11792 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
-R11783:11791 Top.Meta <> NonAtomic constr
-R11800:11809 Top.Syntax <> TInterface constr
+R10903:10908 Top.Syntax <> nature ind
+R10890:10898 Top.Meta <> method_id def
+R10884:10885 Top.Syntax <> ty ind
+def 11035:11050 <> NatureConstraint
+R11062:11064 Coq.Init.Datatypes <> :type_scope:x_'*'_x not
+R11056:11061 Top.Syntax <> nature ind
+R11065:11070 Top.Syntax <> nature ind
+def 11114:11130 <> MethodConstraints
+R11145:11148 Coq.Init.Datatypes <> :type_scope:x_'*'_x not
+R11173:11173 Coq.Init.Datatypes <> :type_scope:x_'*'_x not
+R11136:11144 Top.Meta <> method_id def
+R11165:11168 Coq.Init.Logic <> :type_scope:x_'->'_x not
+R11149:11164 Top.Syntax <> NatureConstraint def
+def 11258:11265 <> natureOf
+R11272:11273 Top.Syntax <> ty ind
+R11278:11283 Top.Syntax <> nature ind
+R11296:11296 Top.Syntax <> t var
+R11309:11314 Top.Syntax <> TClass constr
+R11316:11316 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R11318:11319 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R11326:11326 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R11320:11325 Top.Meta <> Atomic constr
+R11331:11337 Top.Syntax <> NAtomic constr
+R11345:11354 Top.Syntax <> TInterface constr
+R11356:11356 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R11358:11359 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R11366:11366 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R11360:11365 Top.Meta <> Atomic constr
+R11371:11377 Top.Syntax <> NAtomic constr
+R11390:11399 Top.Syntax <> NNonAtomic constr
+def 11473:11480 <> baseType
+R11487:11488 Top.Syntax <> ty ind
+R11493:11494 Top.Syntax <> ty ind
+R11506:11506 Top.Syntax <> t var
+R11519:11524 Top.Syntax <> TClass constr
+R11526:11526 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R11528:11529 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R11531:11531 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R11536:11541 Top.Syntax <> TClass constr
+R11543:11543 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R11545:11546 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R11556:11556 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R11547:11555 Top.Meta <> NonAtomic constr
+R11564:11573 Top.Syntax <> TInterface constr
+R11575:11575 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R11577:11578 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R11580:11580 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R11585:11594 Top.Syntax <> TInterface constr
+R11596:11596 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R11598:11599 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R11609:11609 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R11600:11608 Top.Meta <> NonAtomic constr
+R11617:11621 Top.Syntax <> TUnit constr
+R11626:11630 Top.Syntax <> TUnit constr
+def 11680:11688 <> addAtomic
+R11695:11696 Top.Syntax <> ty ind
+R11701:11702 Top.Syntax <> ty ind
+R11714:11714 Top.Syntax <> t var
+R11727:11732 Top.Syntax <> TClass constr
+R11734:11734 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R11736:11737 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R11739:11739 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R11744:11749 Top.Syntax <> TClass constr
+R11751:11751 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R11753:11754 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R11761:11761 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R11755:11760 Top.Meta <> Atomic constr
+R11769:11778 Top.Syntax <> TInterface constr
+R11780:11780 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R11782:11783 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R11785:11785 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R11790:11799 Top.Syntax <> TInterface constr
+R11801:11801 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
+R11803:11804 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
 R11811:11811 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
-R11813:11814 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
-R11816:11816 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
-R11821:11830 Top.Syntax <> TInterface constr
-R11832:11832 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
-R11834:11835 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
-R11845:11845 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
-R11836:11844 Top.Meta <> NonAtomic constr
-R11853:11857 Top.Syntax <> TUnit constr
-R11862:11866 Top.Syntax <> TUnit constr
-def 11916:11924 <> addAtomic
-R11931:11932 Top.Syntax <> ty ind
-R11937:11938 Top.Syntax <> ty ind
-R11950:11950 Top.Syntax <> t var
-R11963:11968 Top.Syntax <> TClass constr
-R11970:11970 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
-R11972:11973 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
-R11975:11975 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
-R11980:11985 Top.Syntax <> TClass constr
-R11987:11987 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
-R11989:11990 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
-R11997:11997 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
-R11991:11996 Top.Meta <> Atomic constr
-R12005:12014 Top.Syntax <> TInterface constr
-R12016:12016 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
-R12018:12019 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
-R12021:12021 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
-R12026:12035 Top.Syntax <> TInterface constr
-R12037:12037 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
-R12039:12040 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
-R12047:12047 Coq.Init.Datatypes <> :core_scope:'('_x_','_x_','_'..'_','_x_')' not
-R12041:12046 Top.Meta <> Atomic constr
-R12055:12059 Top.Syntax <> TUnit constr
-R12064:12068 Top.Syntax <> TUnit constr
-def 12116:12124 <> subst_nat
-R12131:12136 Top.Syntax <> nature ind
-R12144:12146 Top.Syntax <> var ind
-R12155:12160 Top.Syntax <> nature ind
-R12165:12170 Top.Syntax <> nature ind
-R12184:12184 Top.Syntax <> n var
-R12197:12200 Top.Syntax <> NVar constr
-R12207:12208 Top.Syntax <> n1 var
-R12216:12232 Top.Syntax <> ConditionalNature constr
-R12245:12261 Top.Syntax <> ConditionalNature constr
-R12321:12329 Top.Syntax <> subst_nat def
-R12335:12336 Top.Syntax <> n1 var
-R12333:12333 Top.Syntax <> x var
-R12302:12310 Top.Syntax <> subst_nat def
-R12316:12317 Top.Syntax <> n1 var
-R12314:12314 Top.Syntax <> x var
-R12283:12291 Top.Syntax <> subst_nat def
-R12297:12298 Top.Syntax <> n1 var
-R12295:12295 Top.Syntax <> x var
-R12264:12272 Top.Syntax <> subst_nat def
-R12278:12279 Top.Syntax <> n1 var
-R12276:12276 Top.Syntax <> x var
-R12350:12350 Top.Syntax <> n var
-def 12400:12408 <> subst_ncs
-R12432:12435 Coq.Init.Logic <> :type_scope:x_'->'_x not
-R12416:12431 Top.Syntax <> NatureConstraint ind
-R12447:12449 Top.Syntax <> var ind
-R12458:12463 Top.Syntax <> nature ind
-R12485:12488 Coq.Init.Logic <> :type_scope:x_'->'_x not
-R12469:12484 Top.Syntax <> NatureConstraint ind
-R12530:12533 Top.Syntax <> elem var
-R12569:12570 Top.Syntax <> NN constr
-R12581:12583 Top.Syntax <> ncs var
-R12586:12587 Top.Syntax <> NN constr
-R12610:12618 Top.Syntax <> subst_nat def
-R12625:12626 Top.Syntax <> n1 var
-R12623:12623 Top.Syntax <> x var
-R12590:12598 Top.Syntax <> subst_nat def
-R12605:12606 Top.Syntax <> n1 var
-R12603:12603 Top.Syntax <> x var
-R12659:12660 Top.Syntax <> NC constr
-R12670:12672 Top.Syntax <> ncs var
-R12675:12676 Top.Syntax <> NC constr
-R12679:12687 Top.Syntax <> subst_nat def
-R12694:12695 Top.Syntax <> n1 var
-R12692:12692 Top.Syntax <> x var
-R12719:12721 Top.Syntax <> ncs var
+R11805:11810 Top.Meta <> Atomic constr
+R11819:11823 Top.Syntax <> TUnit constr
+R11828:11832 Top.Syntax <> TUnit constr

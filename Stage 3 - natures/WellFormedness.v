@@ -52,14 +52,14 @@ Inductive wfMethodDecl (P : program) (c : class_id) : (MethodConstraints -> Prop
                                 (env_var (SV x)) t)
                         (env_var (SV this)) (TClass c) in
          P ; Gamma |- e \in t' # n' |> ncs') -> (*!!*)
-        match NatureOf(t') with  (*!!*)
-        | NAtomic => let ncs := Singleton NatureConstraint (NN n' NAtomic) in NatureConstraint
+        match natureOf(t') with  (*!!*)
+        | NAtomic => let ncs := Singleton NatureConstraint (n', NAtomic) in NatureConstraint
         | _ => let ncs := Empty_set NatureConstraint in NatureConstraint
         end ->
         wfMethodDecl P c 
           (Singleton MethodConstraints (m, 
              Union NatureConstraint (Union NatureConstraint ncs' ncs) 
-              (Ensembles.Add NatureConstraint (Singleton NatureConstraint (NN (NVar (SV this)) (NatureOf (TClass c)))) (NN (NVar Nreturn) n') )
+              (Ensembles.Add NatureConstraint (Singleton NatureConstraint ((NVar (SV this)), (natureOf (TClass c)))) ((NVar Nreturn), n') )
                                        )
           )
                 (Method m (x, t) t' e). (*!!*)
@@ -75,8 +75,7 @@ Inductive wfClassDecl (P : program) : (MethodConstraints -> Prop) -> classDecl -
 
 Inductive wfProgram : program -> ty -> (MethodConstraints -> Prop) -> Prop := (*!!*)
   | WF_Program :
-      forall cds ids e t n ncs mcs, 
-      forall m_id : method_id,
+      forall cds ids e t n ncs mcs (m_id : method_id), 
         Forall (wfClassDecl (cds, ids, e) mcs) cds -> (*!!*)
         Forall (wfInterface (cds, ids, e)) ids ->
         (cds, ids, e); empty |- e \in t # n |> ncs ->

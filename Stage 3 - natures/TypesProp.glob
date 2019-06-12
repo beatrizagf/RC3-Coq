@@ -958,7 +958,7 @@ R15018:15025 Coq.Init.Logic <> :type_scope:'exists'_x_'..'_x_','_x not
 R15070:15076 Coq.Init.Logic <> :type_scope:'exists'_x_'..'_x_','_x not
 R15030:15035 Top.Syntax <> nature ind
 R15062:15065 Coq.Init.Logic <> :type_scope:x_'->'_x not
-R15046:15061 Top.Syntax <> NatureConstraint ind
+R15046:15061 Top.Syntax <> NatureConstraint def
 R15078:15079 Top.Types <> ::x_';'_x_'|-'_x_'\in'_x_'#'_x_'|>'_x not
 R15085:15088 Top.Types <> ::x_';'_x_'|-'_x_'\in'_x_'#'_x_'|>'_x not
 R15100:15104 Top.Types <> ::x_';'_x_'|-'_x_'\in'_x_'#'_x_'|>'_x not

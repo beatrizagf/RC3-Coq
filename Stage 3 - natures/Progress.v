@@ -202,6 +202,6 @@ Proof with eauto.
         destruct T2Steps as [[[[H' V'] n'] T2']].
         right. eexists; eapply EvalAsyncRight...
     - SCase "T1 steps".
-      destruct T1Steps as [[[[H' V'] n'] T2']].
+      destruct T1Steps as [[[[H' V'] n'] T1']].
       right. eexists; eapply EvalAsyncLeft...
 Qed.

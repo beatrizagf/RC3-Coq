@@ -87,7 +87,7 @@ Inductive hasType (P : program) (Gamma : env) : expr -> ty -> nature -> (NatureC
         wfEnv P Gamma ->
         Gamma (env_loc l) = Some (TClass c) -> 
         subtypeOf P (TClass c) t ->
-        P ; Gamma |- (EVal (VLoc l)) \in t # NatureOf(TClass c) |> (Empty_set NatureConstraint)   (*!!*)
+        P ; Gamma |- (EVal (VLoc l)) \in t # natureOf(TClass c) |> (Empty_set NatureConstraint)   (*!!*)
   | T_Null :
       forall t,
         wfEnv P Gamma ->
@@ -97,7 +97,7 @@ Inductive hasType (P : program) (Gamma : env) : expr -> ty -> nature -> (NatureC
       forall c,
         wfEnv P Gamma ->
         classLookup P c <> None ->
-        let n := ConditionalNature (NatureOf (TClass c)) NAtomic NAtomic Undefined in (*!!*)
+        let n := ConditionalNature (natureOf (TClass c)) NAtomic NAtomic Undefined in (*!!*)
         P ; Gamma |- ENew c \in TClass c # n |> (Empty_set NatureConstraint)  (*!!*)
   | T_Call :
       forall x m e t t1 t2 n msigs y ncs,
@@ -105,38 +105,36 @@ Inductive hasType (P : program) (Gamma : env) : expr -> ty -> nature -> (NatureC
         methodSigs P t1 msigs ->
         methodSigLookup msigs m = Some (MethodSig m (y, t2) t) ->
         P ; Gamma |- e \in t2 # n |> ncs ->   (*!!*)
-        let n1 := NatureOf(addAtomic (discardAtomic t1)) in
-        let n3 := NatureOf(addAtomic (discardAtomic t)) in (*!!*)
-        let n' := ConditionalNature (NVar x) NAtomic n1 (NatureOf(discardAtomic t1)) in (*!!*)
-        let n'' := ConditionalNature (NVar x) NAtomic n3 (NatureOf(discardAtomic t)) in  (*!!*)
-        P ; Gamma |- ECall x m e \in t # n'' |> Union NatureConstraint ncs (Singleton NatureConstraint (NN n' n'')) (*!!*)
+        let n1 := natureOf(addAtomic (baseType t1)) in
+        let n3 := natureOf(addAtomic (baseType t)) in (*!!*)
+        let n' := ConditionalNature (NVar x) NAtomic n1 (natureOf(baseType t1)) in (*!!*)
+        let n'' := ConditionalNature (NVar x) NAtomic n3 (natureOf(baseType t)) in  (*!!*)
+        P ; Gamma |- ECall x m e \in t # n'' |> Union NatureConstraint ncs (Singleton NatureConstraint (n', n'')) (*!!*)
   | T_Select :
       forall x f c t fs nclass,
         P ; Gamma |- (EVar x) \in TClass c # nclass |> (Empty_set NatureConstraint) ->(*!!*)
         fields P (TClass c) = Some fs -> 
         fieldLookup fs f = Some (Field f t) ->
-        let n1 := NatureOf(addAtomic (discardAtomic (FieldsType (Field f t)))) in 
-          let n2 := NatureOf(discardAtomic (FieldsType (Field f t))) in
+        let n1 := natureOf(addAtomic (baseType (FieldsType (Field f t)))) in 
+          let n2 := natureOf(baseType (FieldsType (Field f t))) in
             let n := ConditionalNature (NVar x) NAtomic n1 n2 in 
-              P ; Gamma |- ESelect x f \in t# n |> (Empty_set NatureConstraint) (*!!*)
+              P ; Gamma |- ESelect x f \in t # n |> (Empty_set NatureConstraint) (*!!*)
   | T_Update :
       forall c x f e t fs n ncs nclass,
         P ; Gamma |- (EVar x) \in TClass c # nclass |> (Empty_set NatureConstraint) -> 
         fields P (TClass c) = Some fs -> 
         fieldLookup fs f = Some (Field f t) ->
         P ; Gamma |- e \in t # n |> ncs ->
-        let n1 := NatureOf(addAtomic (discardAtomic (FieldsType (Field f t)))) in (*!atomic!*)
-        let n2 := NatureOf(discardAtomic (FieldsType (Field f t))) in(*!non-atomic!*)
+        let n1 := natureOf(addAtomic (baseType (FieldsType (Field f t)))) in (*!atomic!*)
+        let n2 := natureOf(baseType (FieldsType (Field f t))) in(*!non-atomic!*)
         let n' := ConditionalNature (NVar x) NAtomic n1 n2 in (*!!*)
-        P ; Gamma |- EUpdate x f e \in TUnit # Undefined |> Union NatureConstraint ncs (Singleton NatureConstraint (NN n' n))
+        P ; Gamma |- EUpdate x f e \in TUnit # Undefined |> Union NatureConstraint ncs (Singleton NatureConstraint (n', n))
   | T_Let :
       forall x e body t t' n n' ncs ncs',
         P ; Gamma |- e \in t # n |> ncs -> (*!!*)
         P ; extend Gamma (env_var (SV x)) t |- body \in t'# n' |> ncs' -> (*!!*)
-         let n1 := subst_nat n' (SV x) n in (*!!*)
-         let ncs1 := subst_ncs ncs' (SV x) n in (*!!*)
         no_locks body ->
-        P ; Gamma |- ELet x e body \in t'# n1 |> Union NatureConstraint ncs ncs1 (*!!*)
+        P ; Gamma |- ELet x e body \in t'# n' |> Union NatureConstraint (Union NatureConstraint ncs ncs') (Singleton NatureConstraint ((NVar (SV x)), n)) (*!!*)
   | T_Cast :
       forall e t1 t2 n ncs,
         P ; Gamma |- e \in t2 # n |> ncs -> (*!!*)

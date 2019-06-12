@@ -431,23 +431,19 @@ Inductive nature : Set :=
   | NNonAtomic : nature
   | Undefined : nature
   | NVar : var -> nature
-  | ConditionalNature : nature -> nature -> nature -> nature -> nature. (*(η 1 , η 2 ) ? η 3 : η 4*)
+  | ConditionalNature : nature -> nature -> nature -> nature -> nature (*(η 1 , η 2 ) ? η 3 : η 4*)
+  | Call : ty -> method_id -> nature -> nature. (*t.m(n)*)
 
+(* Definition Call := (ty * method_id * nature)%type. (*Type × MethodName × Nature*) *)
 
-Definition Call := (ty * method_id * nature)%type. (*Type × MethodName × Nature*)
-
-Inductive NatureConstraint :=   (*Nature × Nature ∪ Nature × Call*)
-  | NN : nature -> nature -> NatureConstraint
-  | NC : nature -> Call -> NatureConstraint.
-
-Definition NatureConstraintSystem := (Power_set NatureConstraint (Full_set NatureConstraint)).  (*NCS*)
+Definition NatureConstraint := (nature * nature)%type.   (*Nature × Nature*)
 
 Definition MethodConstraints := (method_id * (NatureConstraint -> Prop))%type.
 
-Definition MethodConstraintSystem := (Power_set MethodConstraints (Full_set MethodConstraints)). (*MCS*)
+
 (***************************)
 (*to know the natures of types*)
-Definition NatureOf (t : ty) : nature :=
+Definition natureOf (t : ty) : nature :=
   match t with
     | TClass (c, Atomic) => NAtomic
     | TInterface (i, Atomic) => NAtomic
@@ -456,7 +452,7 @@ Definition NatureOf (t : ty) : nature :=
 
 (***************************)
 (*to take off atomic*)
-Definition discardAtomic (t : ty) : ty:=
+Definition baseType (t : ty) : ty:=
   match t with
     | TClass (c, a) => TClass (c, NonAtomic)
     | TInterface (i, a) => TInterface (i, NonAtomic)
@@ -470,21 +466,3 @@ Definition addAtomic (t : ty) : ty:=
     | TInterface (i, a) => TInterface (i, Atomic)
     | TUnit => TUnit
   end.
-(***************************)
-Fixpoint subst_nat (n : nature) (x : var) (n1 : nature) : nature := 
-  match n with
-    | NVar x => n1
-    | ConditionalNature a b c d => ConditionalNature (subst_nat a x n1) (subst_nat b x n1) (subst_nat c x n1) (subst_nat d x n1)
-    | _ => n  
-end.
-
-(*************************)
-
-Definition subst_ncs(ncs : NatureConstraint -> Prop) (x : var) (n1 : nature) : (NatureConstraint -> Prop) := 
-
-let ncs elem :=
-        match elem with 
-                          | NN na nb => ncs (NN (subst_nat na x n1) (subst_nat nb x n1)) 
-                          | NC nc c => ncs (NC (subst_nat nc x n1) c)
-        end 
-  in ncs.
