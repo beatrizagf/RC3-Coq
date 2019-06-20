@@ -318,12 +318,46 @@ Definition program := (list classDecl * list interfaceDecl * expr)%type.
 
 
 (**************strip functions*******************)
+(*auxiliary*)
+Definition stripType (t : ty) : ty :=
+  match t with
+    | TClass c => TClass (stripClass c)
+    | TInterface i => TInterface (stripInterface i)
+    | TUnit => TUnit
+  end.
 
+(*Method Signature*)
+Fixpoint stripListMethodSig(msds : list methodSig) : list methodSig := 
+  match msds with
+    | nil => nil
+    | h :: t => match h with 
+                          | MethodSig m (sv,t1) t2 => MethodSig m (sv, (stripType t1)) (stripType t2)
+                end :: stripListMethodSig t
+  end.
+
+(*Method declaration*)
+Fixpoint stripListMethod(mds : list methodDecl) : list methodDecl := 
+  match mds with
+    | nil => nil
+    | h :: t => match h with 
+                          | Method m (sv,t1) t2 e => Method m (sv, (stripType t1)) (stripType t2) e
+                end :: stripListMethod t
+  end.
+
+(*Field declaration*)
+Fixpoint stripListField(fds : list fieldDecl) : list fieldDecl := 
+  match fds with
+    | nil => nil
+    | h :: tail => match h with 
+                          | Field f t => Field f (stripType t)
+                end :: stripListField tail
+  end.
+(************************************************************)
 Fixpoint stripListCl(cds : list classDecl) : list classDecl := 
   match cds with
     | nil => nil
     | h :: t => match h with 
-                          | Cls c i l l0 => Cls (stripClass c) (stripInterface i) l l0
+                          | Cls c i l l0 => Cls (stripClass c) (stripInterface i) (stripListField l) (stripListMethod l0)
                 end :: stripListCl t
   end.
 
@@ -331,7 +365,7 @@ Fixpoint stripListIn(ids : list interfaceDecl) : list interfaceDecl :=
   match ids with
     | nil => nil
     | h :: t => match h with
-                          | Interface i l => Interface (stripInterface i) l
+                          | Interface i l => Interface (stripInterface i) (stripListMethodSig l)
                           | ExtInterface i i0 i1 => ExtInterface (stripInterface i) (stripInterface i0) (stripInterface i1) 
                 end :: stripListIn t
   end.
