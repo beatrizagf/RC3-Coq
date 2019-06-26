@@ -353,6 +353,7 @@ Fixpoint stripListField(fds : list fieldDecl) : list fieldDecl :=
                 end :: stripListField tail
   end.
 (************************************************************)
+(*stripClass and stripInterface are not really necessary*)
 Fixpoint stripListCl(cds : list classDecl) : list classDecl := 
   match cds with
     | nil => nil
@@ -369,14 +370,22 @@ Fixpoint stripListIn(ids : list interfaceDecl) : list interfaceDecl :=
                           | ExtInterface i i0 i1 => ExtInterface (stripInterface i) (stripInterface i0) (stripInterface i1) 
                 end :: stripListIn t
   end.
+
+(*the programmer can turn the expressions New and Cast into atomic, so we have to strip their atomicity*)
+Fixpoint stripExpr (e : expr) : expr :=
+  match e with
+    | ENew c => ENew (stripClass c)
+    | ECast t e2 => ECast (stripType t) (stripExpr e2)
+    | _ => e
+  end.
+
 (**********************************)
 (*strip funcion that ignores atomicity*)
 Definition strip(P : program) :=
   match P with
-    | (cs, ids, e) => (stripListCl cs, stripListIn ids, e)
+    | (cs, ids, e) => (stripListCl cs, stripListIn ids, stripExpr e)
   end.
 (***************************************************)
-
 
 Definition classLookup(P : program)(c : class_id) : option classDecl :=
   match P with
