@@ -376,8 +376,16 @@ Fixpoint stripExpr (e : expr) : expr :=
   match e with
     | ENew c => ENew (stripClass c)
     | ECast t e2 => ECast (stripType t) (stripExpr e2)
+    | ECall x m e1 => ECall x m (stripExpr e1)
+    | EUpdate x f e1 => EUpdate x f (stripExpr e1)
+    | ELet x e1 e2 => ELet x (stripExpr e1) (stripExpr e2)
+    | EPar e1 e2 e3 => EPar (stripExpr e1) (stripExpr e2) (stripExpr e3)
+    | ELock x e1 => ELock x (stripExpr e1)
+    | ELocked l e1 => ELocked l (stripExpr e1)
     | _ => e
   end.
+
+
 
 (**********************************)
 (*strip funcion that ignores atomicity*)
